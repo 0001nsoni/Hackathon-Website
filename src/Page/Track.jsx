@@ -53,7 +53,7 @@ const Track = ({ id }) => {
     hidden: { y: 50, opacity: 0 },
     visible: {
       y: 0,
-      opacity: 1,
+      opacity: 0.82,
       transition: {
         duration: 0.7,
         ease: "easeOut"
@@ -66,7 +66,7 @@ const Track = ({ id }) => {
       id={id} 
       className="relative w-full min-h-screen py-16 px-4 overflow-hidden"
       style={{
-        background: `linear-gradient(rgba(13, 13, 13, 0.9), rgba(13, 13, 13, 0.9)), url(${house})`,
+        background: `linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.9)), url(${house})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -105,7 +105,7 @@ const Track = ({ id }) => {
               style={{
                 background: `linear-gradient(145deg, ${house.color} 0%, ${house.secondaryColor} 100%)`,
                 boxShadow: `0 4px 30px rgba(0, 0, 0, 0.3)`,
-                border: `1px solid ${house.secondaryColor}`
+                border: `1px solid ${house.secondaryColor}`,
               }}
             >
               <div className="p-5 md:p-6 h-full flex flex-col">
@@ -119,11 +119,11 @@ const Track = ({ id }) => {
                   <p className="text-sm md:text-base text-gray-200">{house.description}</p>
                 </div>
                 
-                <button 
+                {/* <button 
                   className="mt-auto w-full py-2 px-4 bg-black/40 hover:bg-black/60 text-white font-bold rounded-lg border border-white/20 transition-colors duration-300 text-sm md:text-base"
                 >
                   Join {house.name}
-                </button>
+                </button> */}
               </div>
             </motion.div>
           ))}
