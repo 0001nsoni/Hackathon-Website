@@ -1,0 +1,39 @@
+@import "tailwindcss";
+/* Add these styles to your global CSS or Tailwind config */
+
+/* House colors inspired by Hogwarts */
+.gryffindor {
+    color: #9c2d2f; /* Red */
+  }
+  
+  .hufflepuff {
+    color: #f0c100; /* Yellow */
+  }
+  
+  .ravenclaw {
+    color: #006f8e; /* Blue */
+  }
+  
+  .slytherin {
+    color: #2a623d; /* Green */
+  }
+  
+  /* Hover effects for a magical feel */
+  .nav-link {
+    font-family: 'Garamond', serif; /* You can replace this with a Harry Potter-style font if you have one */
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    animation: magic-glow 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes magic-glow {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    }
+    100% {
+      text-shadow: 0 0 20px rgba(255, 215, 0, 1), 0 0 30px rgba(255, 215, 0, 1);
+    }
+  }
+  
