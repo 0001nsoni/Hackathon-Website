@@ -12,7 +12,7 @@ const Home = ({ id }) => {
     } else {
       return (
         <div className="text-center">
-          <h3 className="text-xl bg-black/70 w-[90%] rounded-tl-2xl rounded-br-2xl border-[#eeba30] border-2 p-1 text-[#eeba30] font-bold mb-4">
+          <h3 className="text-xl bg-black/70 rounded-tl-2xl rounded-br-2xl border-[#eeba30] border-2 p-1 text-[#eeba30] font-bold mb-4">
             Hogwarts Express Departing In:
           </h3>
           <div className="flex gap-4 justify-center">
