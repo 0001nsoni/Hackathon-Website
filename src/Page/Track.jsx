@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import house from '../assets/house.gif';
 
-const track = ({ id }) => {
+const Track = ({ id }) => {
   const houses = [
     {
       name: "Gryffindor",
@@ -61,56 +62,65 @@ const track = ({ id }) => {
   };
 
   return (
-    <section id={id} className="relative w-full min-h-screen py-16 px-4 bg-[#0d0d0d]">
-      {/* Background elements */}
-      <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/dark-wood.png')]"></div>
-      
+    <section 
+      id={id} 
+      className="relative w-full min-h-screen py-16 px-4 overflow-hidden"
+      style={{
+        background: `linear-gradient(rgba(13, 13, 13, 0.9), rgba(13, 13, 13, 0.9)), url(${house})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#eeba30] mb-4 font-serif">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#eeba30] mb-3 md:mb-4 font-serif">
             House Categories
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             Choose your house and join fellow wizards in your specialized tech track
           </p>
         </motion.div>
 
         {/* House Cards */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {houses.map((house, index) => (
+          {houses.map((house) => (
             <motion.div 
               key={house.name}
               variants={itemVariants}
-              className={`rounded-tl-3xl rounded-br-3xl overflow-hidden shadow-2xl hover:shadow-[${house.color}]/50 transition-all duration-300 hover:-translate-y-2`}
+              className={`rounded-tl-3xl rounded-br-3xl overflow-hidden shadow-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-2`}
               style={{
-                background: `linear-gradient(145deg, ${house.color} 0%, ${house.secondaryColor} 100%)`
+                background: `linear-gradient(145deg, ${house.color} 0%, ${house.secondaryColor} 100%)`,
+                boxShadow: `0 4px 30px rgba(0, 0, 0, 0.3)`,
+                border: `1px solid ${house.secondaryColor}`
               }}
             >
-              <div className="p-6 h-full flex flex-col">
-                <div className="flex items-center mb-4">
-                  <span className="text-4xl mr-3">{house.icon}</span>
-                  <h3 className="text-2xl font-bold text-white">{house.name}</h3>
+              <div className="p-5 md:p-6 h-full flex flex-col">
+                <div className="flex items-center mb-3 md:mb-4">
+                  <span className="text-3xl md:text-4xl mr-3">{house.icon}</span>
+                  <h3 className="text-xl md:text-2xl font-bold text-white">{house.name}</h3>
                 </div>
                 
                 <div className="bg-black/30 backdrop-blur-sm rounded-lg p-4 mb-4 flex-grow">
-                  <h4 className="text-xl font-semibold text-[#eeba30] mb-2">{house.track}</h4>
-                  <p className="text-gray-200">{house.description}</p>
+                  <h4 className="text-lg md:text-xl font-semibold text-[#eeba30] mb-2">{house.track}</h4>
+                  <p className="text-sm md:text-base text-gray-200">{house.description}</p>
                 </div>
                 
                 <button 
-                  className="mt-auto w-full py-2 px-4 bg-black/40 hover:bg-black/60 text-white font-bold rounded-lg border border-white/20 transition-colors duration-300"
+                  className="mt-auto w-full py-2 px-4 bg-black/40 hover:bg-black/60 text-white font-bold rounded-lg border border-white/20 transition-colors duration-300 text-sm md:text-base"
                 >
                   Join {house.name}
                 </button>
@@ -118,19 +128,9 @@ const track = ({ id }) => {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Footer CTA */}
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
-          
-        </motion.div>
       </div>
     </section>
   );
 };
 
-export default track;
+export default Track;

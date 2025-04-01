@@ -12,7 +12,7 @@ const Home = ({ id }) => {
     } else {
       return (
         <div className="text-center">
-          <h3 className="text-xl bg-black/70 rounded-tl-2xl rounded-br-2xl border-[#eeba30] border-2 p-1 text-[#eeba30] font-bold mb-4">
+          <h3 className="text-xl bg-black/70 w-[90%] rounded-tl-2xl rounded-br-2xl border-[#eeba30] border-2 p-1 text-[#eeba30] font-bold mb-4">
             Hogwarts Express Departing In:
           </h3>
           <div className="flex gap-4 justify-center">
@@ -69,7 +69,7 @@ const Home = ({ id }) => {
       ></div>
       
       {/* Main content - adjusted for mobile */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 pt-[40%] md:pt-[10%]">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 pt-[35%] md:pt-[10%]">
         <div className="mt-8 px-4">
           <Countdown date={targetDate} renderer={renderer} />
         </div>
