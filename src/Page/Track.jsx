@@ -64,7 +64,7 @@ const Track = ({ id }) => {
   return (
     <section 
       id={id} 
-      className="relative w-full min-h-screen py-16 px-4 overflow-hidden"
+      className="relative w-full min-h-screen py-16 px-4 overflow-hidden font-rye"
       style={{
         background: `linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.9)), url(${house})`,
         backgroundSize: 'cover',
@@ -81,7 +81,7 @@ const Track = ({ id }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#eeba30] mb-3 md:mb-4 font-serif">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#eeba30] mb-3 md:mb-4">
             House Categories
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
@@ -116,14 +116,8 @@ const Track = ({ id }) => {
                 
                 <div className="bg-black/30 backdrop-blur-sm rounded-lg p-4 mb-4 flex-grow">
                   <h4 className="text-lg md:text-xl font-semibold text-[#eeba30] mb-2">{house.track}</h4>
-                  <p className="text-sm md:text-base text-gray-200">{house.description}</p>
+                  <p className="text-sm md:text-base text-gray-200 ">{house.description}</p>
                 </div>
-                
-                {/* <button 
-                  className="mt-auto w-full py-2 px-4 bg-black/40 hover:bg-black/60 text-white font-bold rounded-lg border border-white/20 transition-colors duration-300 text-sm md:text-base"
-                >
-                  Join {house.name}
-                </button> */}
               </div>
             </motion.div>
           ))}
