@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import house from '../assets/house.gif';
 
 const Track = ({ id }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const houses = [
     {
       name: "Gryffindor",
@@ -38,6 +39,14 @@ const Track = ({ id }) => {
     }
   ];
 
+  // Preload the background image
+  useEffect(() => {
+    const img = new Image();
+    img.src = house;
+    img.onload = () => setIsLoaded(true);
+    img.onerror = () => setIsLoaded(true); // Continue even if image fails to load
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,13 +62,21 @@ const Track = ({ id }) => {
     hidden: { y: 50, opacity: 0 },
     visible: {
       y: 0,
-      opacity: 0.82,
+      opacity: 0.9,
       transition: {
         duration: 0.7,
         ease: "easeOut"
       }
     }
   };
+
+  if (!isLoaded) {
+    return (
+      <div className="w-full min-h-screen flex items-center justify-center bg-black">
+        <div className="text-[#eeba30]">Loading houses...</div>
+      </div>
+    );
+  }
 
   return (
     <section 
@@ -69,7 +86,6 @@ const Track = ({ id }) => {
         background: `linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.9)), url(${house})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
         backgroundRepeat: 'no-repeat'
       }}
     >
@@ -82,7 +98,7 @@ const Track = ({ id }) => {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#eeba30] mb-3 md:mb-4">
-            House Categories
+            House of Tech
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             Choose your house and join fellow wizards in your specialized tech track
@@ -97,16 +113,17 @@ const Track = ({ id }) => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {houses.map((house) => (
+          {houses.map((house, index) => (
             <motion.div 
               key={house.name}
               variants={itemVariants}
-              className={`rounded-tl-3xl rounded-br-3xl overflow-hidden shadow-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-2`}
+              className="rounded-tl-3xl rounded-br-3xl overflow-hidden shadow-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
               style={{
                 background: `linear-gradient(145deg, ${house.color} 0%, ${house.secondaryColor} 100%)`,
                 boxShadow: `0 4px 30px rgba(0, 0, 0, 0.3)`,
                 border: `1px solid ${house.secondaryColor}`,
               }}
+              whileHover={{ scale: 1.02 }}
             >
               <div className="p-5 md:p-6 h-full flex flex-col">
                 <div className="flex items-center mb-3 md:mb-4">
@@ -116,15 +133,27 @@ const Track = ({ id }) => {
                 
                 <div className="bg-black/30 backdrop-blur-sm rounded-lg p-4 mb-4 flex-grow">
                   <h4 className="text-lg md:text-xl font-semibold text-[#eeba30] mb-2">{house.track}</h4>
-                  <p className="text-sm md:text-base text-gray-200 ">{house.description}</p>
+                  <p className="text-sm md:text-base text-gray-200">{house.description}</p>
                 </div>
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Open Innovation Track */}
+        <motion.div
+          className="text-center mt-12 p-4 rounded-tl-3xl rounded-br-3xl bg-black/50 rounded-lg border border-[#eeba30]/30"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+        >
+          <p className="text-lg md:text-xl  text-[#eeba30] font-semibold">
+            Open Innovation Track is Also Available for Interested Developers!
+          </p>
         </motion.div>
       </div>
     </section>
   );
 };
 
-export default Track;
+export default React.memo(Track);

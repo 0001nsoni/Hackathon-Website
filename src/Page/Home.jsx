@@ -1,14 +1,64 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useScroll, motion, useTransform } from 'framer-motion';
 import bgImg from '../assets/hogwarts-min.png';
-import Tpng from '../assets/home1.png';
+import Tpng from '../assets/main.png';
 import bgg from '../assets/bgg.gif';
 import Countdown from 'react-countdown';
+import hogwartsExpress from '../assets/hogwarts-express.gif';
 
 const Home = ({ id }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [errorLoading, setErrorLoading] = useState(false);
   const targetDate = new Date('April 19, 2025 16:00:00').getTime();
   const containerRef = useRef(null);
   
+  // Check if all assets are loaded
+  useEffect(() => {
+    const images = [bgImg, Tpng, bgg];
+    let loadedCount = 0;
+    let errored = false;
+    
+    const handleImageLoad = () => {
+      if (!errored) {
+        loadedCount++;
+        const progress = Math.floor((loadedCount / images.length) * 100);
+        setLoadingProgress(progress);
+        
+        if (loadedCount === images.length) {
+          // Small delay for smooth transition
+          setTimeout(() => setIsLoading(false), 500);
+        }
+      }
+    };
+
+    const handleImageError = (src) => {
+      console.error(`Failed to load image: ${src}`);
+      errored = true;
+      setErrorLoading(true);
+      // Fallback: continue without waiting for this image
+      handleImageLoad();
+    };
+
+    images.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      img.onload = handleImageLoad;
+      img.onerror = () => handleImageError(src);
+    });
+
+    // Fallback timeout in case images take too long
+    const timeout = setTimeout(() => {
+      if (isLoading) {
+        console.warn('Loading timeout reached, continuing anyway');
+        setErrorLoading(true);
+        setIsLoading(false);
+      }
+    }, 10000); // 10 second timeout
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -25,12 +75,7 @@ const Home = ({ id }) => {
     } else {
       return (
         <div className="text-center w-full px-2">
-          <div className="flex justify-center">
-            {/* <h3 className="text-sm sm:text-xl w-full md:w-1/2 lg:w-1/2 bg-black/70 rounded-tl-2xl rounded-br-2xl border-[#eeba30] border-2 p-1 text-[#eeba30] font-bold mb-2 sm:mb-4 font-rye">
-              Hogwarts Express Departing In:
-            </h3> */}
-          </div>
-          <div className="flex gap-1 sm:gap-2 md:gap-4 justify-center flex-wrap">
+          <div className="flex justify-center flex-wrap">
             {['Days', 'Hours', 'Mins', 'Secs'].map((unit, index) => (
               <div 
                 key={unit} 
@@ -48,42 +93,77 @@ const Home = ({ id }) => {
     }
   };
 
+  if (isLoading) {
+    return (
+      <div className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50">
+        <img 
+          src={hogwartsExpress} 
+          alt="Hogwarts Express loading" 
+          className="w-64 h-64 object-contain"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = ''; // Fallback to nothing if the loading GIF fails
+          }}
+        />
+        <div className="mt-8 text-center w-64 sm:w-80">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#eeba30] font-rye mb-4">
+            {errorLoading ? 'Magical Journey Preparing...' : 'The Hogwarts Express is arriving...'}
+          </h2>
+          <div className="w-full bg-gray-700 rounded-full h-2.5">
+            <div 
+              className="bg-[#eeba30] h-2.5 rounded-full transition-all duration-300" 
+              style={{ width: `${loadingProgress}%` }}
+            ></div>
+          </div>
+          <p className="text-white mt-4 font-rye">
+            {errorLoading ? 'Some magical elements took longer than expected...' : 'Preparing your magical journey...'}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <section 
       id={id} 
       ref={containerRef}
       className="relative h-screen w-full overflow-hidden font-rye"
     >
-      {/* Dark stormy background layer */}
+      {/* Dark stormy background layer - with fallback color */}
       <div 
-        className="fixed inset-0 w-full h-full overflow-hidden"
+        className="fixed inset-0 w-full h-full overflow-hidden "
         style={{
-          background: `url(${bgg}) center/cover no-repeat`,
+          background: bgg ? `url(${bgg}) center/cover no-repeat` : undefined,
           zIndex: -2,
           opacity: 0.9,
         }}
       ></div>
       
-      {/* Floating image layer */}
-      <motion.div 
-        className="fixed inset-0 w-full h-full flex items-start justify-center pt-[25%] md:pt-[10%] z-[-1]"
-        style={{ y: yCounter }}
-      >
-        <img 
-          src={Tpng} 
-          alt="Harry Potter themed content" 
-          className="max-w-[50%] sm:max-w-[60%] md:max-w-[25%] ml-5"
-          style={{ 
-            animation: 'float 3s ease-in-out infinite',
-          }}
-        />
-      </motion.div>
+      {/* Floating image layer - only shows if image loaded */}
+      {Tpng && (
+        <motion.div 
+          className="fixed inset-0 w-full h-full flex items-start justify-center pt-[25%] md:pt-[3%] z-[-1]"
+          style={{ y: yCounter }}
+        >
+          <img 
+            src={Tpng} 
+            alt="Harry Potter themed content" 
+            className="max-w-[60%] sm:max-w-[70%] md:max-w-[30%] ml-5"
+            style={{ 
+              animation: 'float 3s ease-in-out infinite',
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        </motion.div>
+      )}
       
-      {/* Hogwarts castle background */}
+      {/* Hogwarts castle background - with fallback color */}
       <motion.div 
-        className="absolute top-0 left-0 w-full h-full"
+        className="absolute top-0 left-0 w-full h-full "
         style={{
-          backgroundImage: `url(${bgImg})`,
+          backgroundImage: bgImg ? `url(${bgImg})` : undefined,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
