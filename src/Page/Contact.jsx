@@ -3,10 +3,8 @@ import logo from '../assets/home1.png';
 import { FaLinkedin, FaTelegram, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 import { FaDiscord, FaSquareInstagram } from "react-icons/fa6";
 import frame from "../assets/frame.png";
-import Rflag from "../assets/flagr.png"
-import Bflag from "../assets/flagb.png"
-import Gflag from "../assets/flagg.png"
-
+import Rflag from "../assets/flagr.png";
+import Bflag from "../assets/flagb.png";
 
 const Contact = () => {
   return (
@@ -18,6 +16,7 @@ const Contact = () => {
             src={logo} 
             alt="Company Logo" 
             className="h-24 w-auto mb-6 md:h-32 md:mb-8 object-contain"
+            loading="lazy"
           />
           
           <div className="text-center w-full px-4">
@@ -40,40 +39,56 @@ const Contact = () => {
         </div>
 
         {/* Section 2: Contact Information (Middle Panel) */}
-        <div style={{ 
-                    backgroundImage: `url(${Bflag})`,}} className="w-full bg-cover md:w-1/3 py-8 md:py-16 bg-gray-950 flex flex-col items-center border-r border-gray-800">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Contact Us</h2>
-          <div className=" gap-4 md:gap-6 w-full max-w-xs px-4">
-            <div className="p-4 md:p-6 rounded-lg shadow-md text-center">
-              <div className="bg-blue-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
-                <FaEnvelope className="text-blue-600 text-xl" />
+        <div 
+          className="w-full md:w-1/3 py-8 md:py-16 bg-gray-950 flex flex-col items-center border-r border-gray-800 relative"
+        >
+          {/* Background with 50% opacity */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-50 z-0"
+            style={{ backgroundImage: `url(${Bflag})` }}
+          ></div>
+          
+          {/* Content */}
+          <div className="relative z-10 w-full">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Contact Us</h2>
+            <div className="gap-4 md:gap-6 m-auto w-full max-w-xs px-4">
+              <div className="p-4 md:p-6 rounded-lg shadow-md text-center bg-black/70 backdrop-blur-sm">
+                <div className="bg-blue-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
+                  <FaEnvelope className="text-blue-600 text-xl" />
+                </div>
+                <h3 className="text-lg font-semibold mb-1">Email</h3>
+                <p className="text-sm">xyz@gmail.com</p>
               </div>
-              <h3 className="text-lg font-semibold mb-1">Email</h3>
-              <p className="text-sm">xyz@gmail.com</p>
-            </div>
-            
-            <div className="p-4 md:p-6 rounded-lg shadow-md text-center">
-              <div className="bg-green-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
-                <FaPhone className="text-green-600 text-xl" />
+              
+              <div className="p-4 md:p-6 rounded-lg shadow-md text-center bg-black/70 backdrop-blur-sm">
+                <div className="bg-green-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
+                  <FaPhone className="text-green-600 text-xl" />
+                </div>
+                <h3 className="text-lg font-semibold mb-1">Phone</h3>
+                <p className="text-sm">+91 1122334455</p>
               </div>
-              <h3 className="text-lg font-semibold mb-1">Phone</h3>
-              <p className="text-sm">+91 1122334455</p>
-            </div>
-            
-            <div className="p-4 md:p-6 rounded-lg shadow-md text-center">
-              <div className="bg-purple-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
-                <FaMapMarkerAlt className="text-purple-600 text-xl" />
+              
+              <div className="p-4 md:p-6 rounded-lg shadow-md text-center bg-black/70 backdrop-blur-sm">
+                <div className="bg-purple-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
+                  <FaMapMarkerAlt className="text-purple-600 text-xl" />
+                </div>
+                <h3 className="text-lg font-semibold mb-1">Location</h3>
+                <p className="text-sm">ACEIT, Kukas Jaipur, Rajasthan</p>
               </div>
-              <h3 className="text-lg font-semibold mb-1">Location</h3>
-              <p className="text-sm">ACEIT, Kukas Jaipur, Rajasthan</p>
             </div>
           </div>
         </div>
 
         {/* Section 3: Map with Frame (Right Panel) */}
-        <div className="w-full bg-cover md:w-1/3 py-8 md:py-16 bg-gray-900"style={{ 
-                    backgroundImage: `url(${Rflag})`,}}>
-          <div className="h-full flex flex-col">
+        <div className="w-full md:w-1/3 py-8 md:py-16 relative">
+          {/* Background with 50% opacity */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-50 z-0"
+            style={{ backgroundImage: `url(${Rflag})` }}
+          ></div>
+          
+          {/* Content */}
+          <div className="h-full flex flex-col relative z-10">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8 px-4">Find Us</h2>
             <div className="flex-1 flex justify-center items-center px-4">
               {/* Container for map with frame */}
