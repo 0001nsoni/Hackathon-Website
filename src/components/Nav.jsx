@@ -1,6 +1,8 @@
-// components/Nav.js
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
+import AryaLogo from '../assets/Arya.jpg';
+import Club from '../assets/hack.png'; // Import your logo
+ 
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,17 +23,50 @@ const Nav = () => {
 
   return (
     <nav className="sticky top-0 w-full bg-[#0d0d0d]/90 backdrop-blur-sm z-50 
-                   border-b border-[#eeba30]/30 py-4 shadow-lg">
+                   border-b border-[#eeba30]/30 py-4 shadow-lg h-20">
       <div className="max-w-6xl mx-auto px-6">
         {/* Desktop Navigation */}
-        <div className="hidden md:flex justify-center items-center gap-12">
-          {navLinks.map((link) => (
-            <NavLink key={link.id} to={link.id}>{link.text}</NavLink>
-          ))}
+        <div className="hidden md:flex mt-1.5 justify-between items-center">
+          {/* Left Logo - Absolutely positioned at left corner */}
+          <div className="absolute left-6">
+            <img 
+              src={AryaLogo} 
+              alt="Logo" 
+              className="h-16 w-16 rounded-full object-cover border-2 border-[#eeba30]"
+            />
+          </div>
+          
+          {/* Navigation Links (centered) */}
+          <div className="flex-1 flex justify-center">
+            <div className="flex gap-12">
+              {navLinks.map((link) => (
+                <NavLink key={link.id} to={link.id}>{link.text}</NavLink>
+              ))}
+            </div>
+          </div>
+          
+          {/* Right Logo - Absolutely positioned at right corner */}
+          <div className="absolute right-6">
+            <img 
+              src={Club} 
+              alt="Logo" 
+              className="h-16 w-16 rounded-full object-cover border-2 border-[#eeba30]"
+            />
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         <div className="md:hidden flex justify-between items-center">
+          {/* Left Logo (Mobile) */}
+          <div className="flex-shrink-0">
+            <img 
+              src={AryaLogo} 
+              alt="Logo" 
+              className="h-10 w-10 rounded-full object-cover border-2 border-[#eeba30]"
+            />
+          </div>
+          
+          {/* Menu Button (Centered) */}
           <button
             onClick={toggleMenu}
             className="text-[#eeba30] focus:outline-none"
@@ -61,6 +96,15 @@ const Nav = () => {
               )}
             </svg>
           </button>
+          
+          {/* Right Logo (Mobile) */}
+          <div className="flex-shrink-0">
+            <img 
+              src={Club} 
+              alt="Logo" 
+              className="h-10 w-10 rounded-full object-cover border-2 border-[#eeba30]"
+            />
+          </div>
 
           {/* Mobile Menu */}
           {isOpen && (
@@ -87,7 +131,7 @@ const Nav = () => {
 const NavLink = ({ to, children }) => {
   return (
     <Link
-      activeClass="active"
+      activeClass="text-white"
       to={to}
       spy={true}
       smooth={true}
@@ -106,7 +150,7 @@ const NavLink = ({ to, children }) => {
 const MobileNavLink = ({ to, children, onClick }) => {
   return (
     <Link
-      activeClass="active"
+      activeClass="text-purple-300 bg-purple-900/20"
       to={to}
       spy={true}
       smooth={true}

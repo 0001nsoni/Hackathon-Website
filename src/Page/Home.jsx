@@ -26,9 +26,9 @@ const Home = ({ id }) => {
       return (
         <div className="text-center w-full px-2">
           <div className="flex justify-center">
-            <h3 className="text-sm sm:text-xl w-full md:w-1/2 lg:w-1/2 bg-black/70 rounded-tl-2xl rounded-br-2xl border-[#eeba30] border-2 p-1 text-[#eeba30] font-bold mb-2 sm:mb-4 font-rye">
+            {/* <h3 className="text-sm sm:text-xl w-full md:w-1/2 lg:w-1/2 bg-black/70 rounded-tl-2xl rounded-br-2xl border-[#eeba30] border-2 p-1 text-[#eeba30] font-bold mb-2 sm:mb-4 font-rye">
               Hogwarts Express Departing In:
-            </h3>
+            </h3> */}
           </div>
           <div className="flex gap-1 sm:gap-2 md:gap-4 justify-center flex-wrap">
             {['Days', 'Hours', 'Mins', 'Secs'].map((unit, index) => (
