@@ -3,6 +3,10 @@ import logo from '../assets/home1.png';
 import { FaLinkedin, FaTelegram, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 import { FaDiscord, FaSquareInstagram } from "react-icons/fa6";
 import frame from "../assets/frame.png";
+import Rflag from "../assets/flagr.png"
+import Bflag from "../assets/flagb.png"
+import Gflag from "../assets/flagg.png"
+
 
 const Contact = () => {
   return (
@@ -36,9 +40,10 @@ const Contact = () => {
         </div>
 
         {/* Section 2: Contact Information (Middle Panel) */}
-        <div className="w-full md:w-1/3 py-8 md:py-16 bg-gray-950 flex flex-col items-center border-r border-gray-800">
+        <div style={{ 
+                    backgroundImage: `url(${Bflag})`,}} className="w-full bg-cover md:w-1/3 py-8 md:py-16 bg-gray-950 flex flex-col items-center border-r border-gray-800">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Contact Us</h2>
-          <div className="grid grid-cols-1 gap-4 md:gap-6 w-full max-w-xs px-4">
+          <div className=" gap-4 md:gap-6 w-full max-w-xs px-4">
             <div className="p-4 md:p-6 rounded-lg shadow-md text-center">
               <div className="bg-blue-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
                 <FaEnvelope className="text-blue-600 text-xl" />
@@ -66,7 +71,8 @@ const Contact = () => {
         </div>
 
         {/* Section 3: Map with Frame (Right Panel) */}
-        <div className="w-full md:w-1/3 py-8 md:py-16 bg-gray-900">
+        <div className="w-full bg-cover md:w-1/3 py-8 md:py-16 bg-gray-900"style={{ 
+                    backgroundImage: `url(${Rflag})`,}}>
           <div className="h-full flex flex-col">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8 px-4">Find Us</h2>
             <div className="flex-1 flex justify-center items-center px-4">
@@ -76,8 +82,8 @@ const Contact = () => {
                 <div className="absolute inset-0 flex justify-center items-center z-0">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3554.0091768445336!2d75.89098077479052!3d27.029875955046872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396daf9e6f4d2f3b%3A0x5b28af6fe5c60627!2sArya%20College%20of%20Engineering%20%26%20IT!5e0!3m2!1sen!2sin!4v1743687727628!5m2!1sen!2sin" 
-                    width="100%"
-                    height="100%"
+                    width="97%"
+                    height="97%"
                     style={{ border: 0 }}
                     allowFullScreen=""
                     loading="lazy"
