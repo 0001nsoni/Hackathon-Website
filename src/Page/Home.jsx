@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useScroll, motion, useTransform } from 'framer-motion';
-import bgImg from '../assets/hogwarts.png';
+import bgImg from '../assets/hogwarts-min.png';
 import Tpng from '../assets/home1.png';
 import bgg from '../assets/bgg.gif';
 import Countdown from 'react-countdown';
