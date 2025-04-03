@@ -62,7 +62,7 @@ const About = ({ id }) => {
           variants={itemVariants}
           whileHover={{ scale: 1.02 }}
         >
-          HackTantra 2024 is Rajasthan's most electrifying student-run hackathon, uniting innovators and tech enthusiasts for 24 hours of coding, creativity, and problem-solving.
+          Hack Arya Verse 2025 is Rajasthan's most electrifying student-run hackathon, uniting innovators and tech enthusiasts for 24 hours of coding, creativity, and problem-solving.
 
           "It matters not what you are born, but what you code to be." Step into a realm where spells are algorithms, wands are keyboards, and innovation is your Patronus.
 
