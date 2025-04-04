@@ -8,6 +8,7 @@ import Contact from './Page/Contact';
 import './App.css';
 import Faq from './Page/Faq';
 import Timeline from './Page/Timeline';
+import Sponsors from './Page/Sponsors';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Timeline id="timeline"/>
         <Track id="tracks"/>
         <Faq id= 'faq'/>
+        <Sponsors/>
         <Contact id="contact"/>
       </main>
     </div>
