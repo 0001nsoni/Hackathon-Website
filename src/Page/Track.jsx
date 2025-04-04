@@ -8,32 +8,32 @@ const Track = ({ id }) => {
     {
       name: "Gryffindor",
       icon: "🦁",
-      color: "#ae0001",
-      secondaryColor: "#eeba30",
+      color: "#5a0001", // Darker red
+      secondaryColor: "#b8860b", // Metallic gold
       track: "AI/ML & Emerging Tech",
       description: "For the brave innovators working on cutting-edge artificial intelligence, machine learning, and emerging technologies that will shape our future."
     },
     {
       name: "Ravenclaw",
       icon: "🦅",
-      color: "#0e1a40",
-      secondaryColor: "#946b2d",
+      color: "#0a122a", // Darker blue
+      secondaryColor: "#6b4f1d", // Metallic bronze
       track: "Cybersecurity & Algorithms",
       description: "For the wise problem-solvers specializing in cybersecurity, encryption, and complex algorithm development to protect and optimize our digital world."
     },
     {
       name: "Hufflepuff",
       icon: "🦡",
-      color: "#ecb939",
-      secondaryColor: "#372e29",
+      color: "#8b7500", // Darker yellow
+      secondaryColor: "#2e2925", // Metallic brown
       track: "Web & App Development",
       description: "For the dedicated builders creating beautiful, functional web applications and mobile experiences that connect people and solve real problems."
     },
     {
       name: "Slytherin",
       icon: "🐍",
-      color: "#2a623d",
-      secondaryColor: "#aaaaaa",
+      color: "#1b4d2e", // Darker green
+      secondaryColor: "#6c757d", // Metallic silver
       track: "Blockchain & Cloud",
       description: "For the ambitious visionaries developing decentralized blockchain solutions and scalable cloud architectures that power the next generation of applications."
     }

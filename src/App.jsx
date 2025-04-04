@@ -22,8 +22,8 @@ function App() {
         <Timeline id="timeline"/>
         <Track id="tracks"/>
         <PrizePool />
+        <GuestSlider id="guests"/>
         <Faq id= 'faq'/>
-        <GuestSlider/>
         <Sponsors/>
         <Contact id="contact"/>
       </main>

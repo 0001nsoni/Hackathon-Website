@@ -46,8 +46,8 @@ const PricePool = () => {
       className='p-5'
     >
       <div style={{ maxWidth: '1024px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 10 }}>
-        <motion.h1 
-          style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '48px', color: '#eeba30', backgroundImage: 'linear-gradient(to right, #eeba30, #ffd700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+        <motion.h1 className='text-3xl sm:text-4xl md:text-5xl font-bold text-[#eeba30] mb-3 md:mb-4'
+          style={{  backgroundImage: 'linear-gradient(to right, #eeba30, #ffd700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

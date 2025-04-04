@@ -76,12 +76,12 @@ const Home = ({ id }) => {
             {['Days', 'Hours', 'Mins', 'Secs'].map((unit, index) => (
               <div 
                 key={unit} 
-                className="bg-black/70 p-1 sm:p-2 md:p-4 rounded-tl-2xl rounded-br-2xl border border-[#eeba30] min-w-[60px]"
+                className="bg-black/70 p-1 m-1 sm:p-2 md:p-4 rounded-tl-2xl rounded-br-2xl border border-[#eeba30] min-w-[60px]"
               >
                 <div className="text-xl sm:text-2xl md:text-4xl font-bold text-[#eeba30] font-rye">
                   {[days, hours, minutes, seconds][index]}
                 </div>
-                <div className="text-xs sm:text-sm text-white font-rye">{unit}</div>
+                <div className="text-xs sm:text-sm text-white ">{unit}</div>
               </div>
             ))}
           </div>

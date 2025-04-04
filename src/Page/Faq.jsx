@@ -42,14 +42,14 @@ const Faq = () => {
   return (
     <section 
       id='faq' 
-      className='flex items-center justify-center min-h-screen bg-black text-white flex-col py-12 px-4'
+      className='flex items-center justify-center gap-10 min-h-screen bg-black text-white flex-col py-12 px-4'
     //   style={{ backgroundColor: '#0d0d0d' }} // Double ensure background color
     >
-      <div className='text-4xl text-[#eeba30] font-bold mb-12 font-rye'>
+      <div className='text-3xl sm:text-4xl p-10 text-center md:text-5xl font-bold text-[#eeba30] mb-3 md:mb-4'>
         Frequently Asked Questions (FAQs)
       </div>
       
-      <div className='w-full max-w-4xl space-y-4'>
+      <div className='w-full max-w-4xl p-5 pt-0 space-y-4'>
         {visibleFaqs.map((faq, index) => (
           <motion.div 
             key={index}
@@ -97,7 +97,7 @@ const Faq = () => {
           >
             <button
               onClick={() => setShowAll(!showAll)}
-              className="bg-[#eeba30] hover:bg-[#d4a72c] text-[#1a0d00] font-bold py-2 px-6 rounded-tl-2xl rounded-br-2xl transition-all duration-300 font-rye"
+              className="bg-[#eeba30] hover:bg-[#d4a72c] p-5 text-xl text-[#1a0d00] font-bold py-2 px-6 rounded-tl-2xl rounded-br-2xl transition-all duration-300 font-rye"
             >
               {showAll ? 'Read Less' : 'Read More'}
             </button>

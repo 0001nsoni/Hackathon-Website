@@ -5,7 +5,7 @@ const Card = ({ name, logo, type }) => {
   const cardStyle = {
     organized: {
       container: "bg-gradient-to-br from-gray-900 to-gray-800",
-      border: "border-l-4 border-t-4 border-[#eeba30]",
+      border: "border-r-4 border-b-4 border-[#eeba30]",
       accent: "bg-[#eeba30]",
       text: "from-[#eeba30] to-[#d3a625]"
     },
@@ -17,13 +17,13 @@ const Card = ({ name, logo, type }) => {
     },
     partner: {
       container: "bg-gradient-to-br from-[#0d6217] to-[#06300c]",
-      border: "border-t-4 border-b-4 border-[#eeba30]",
+      border: "border-r-4 border-b-4 border-[#eeba30]",
       accent: "bg-[#0d6217]",
       text: "from-[#eeba30] to-[#d3a625]"
     },
     media: {
-      container: "bg-gradient-to-br from-[#1a237e] to-[#283593]",
-      border: "border-4 border-dashed border-[#eeba30]",
+      container: "bg-gradient-to-t from-[#27364d]/30 to-[#5854cd]/60",
+      border: "border-r-4 border-b-4 border-[#eeba30]",
       accent: "bg-[#eeba30]",
       text: "from-[#eeba30] to-[#ffd700]"
     }
