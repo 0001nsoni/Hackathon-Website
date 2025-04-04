@@ -11,7 +11,7 @@ const Home = ({ id }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [errorLoading, setErrorLoading] = useState(false);
-  const targetDate = new Date('April 19, 2025 16:00:00').getTime();
+  const targetDate = new Date('April 26, 2025 16:00:00').getTime();
   const containerRef = useRef(null);
   
   useEffect(() => {

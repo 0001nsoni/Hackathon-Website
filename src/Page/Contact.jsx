@@ -56,16 +56,16 @@ const Contact = () => {
           <div className="text-center w-full px-4">
             <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Follow Us</h2>
             <div className="flex justify-center space-x-6 md:space-x-8">
-              <a href="#" className="text-3xl md:text-4xl text-blue-600 hover:text-[#eeba30] transition-colors">
+              <a href="#" className="text-3xl md:text-4xl text-[#eeba30] hover:text-white transition-colors">
                 <FaLinkedin />
               </a>
-              <a href="#" className="text-3xl md:text-4xl text-indigo-600 hover:text-[#eeba30] transition-colors">
+              <a href="#" className="text-3xl md:text-4xl text-[#eeba30] hover:text-white transition-colors">
                 <FaDiscord />
               </a>
-              <a href="#" className="text-3xl md:text-4xl text-blue-500 hover:text-[#eeba30] transition-colors">
+              <a href="#" className="text-3xl md:text-4xl text-[#eeba30] hover:text-white transition-colors">
                 <FaTelegram />
               </a>
-              <a href="#" className="text-3xl md:text-4xl text-pink-500 hover:text-[#eeba30] transition-colors">
+              <a href="#" className="text-3xl md:text-4xl text-[#eeba30] hover:text-white transition-colors">
                 <FaSquareInstagram />
               </a>
             </div>
@@ -78,24 +78,24 @@ const Contact = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Contact Us</h2>
             <div className="gap-4 md:gap-6  m-auto w-full max-w-xs px-4">
               <div className="p-4 md:p-6  rounded-lg shadow-md text-center bg-black/70 backdrop-blur-sm border border-[#eeba30]/30">
-                <div className="bg-blue-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
-                  <FaEnvelope className="text-blue-600 text-xl" />
+                <div className="bg-[#eeba30] w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
+                  <FaEnvelope className="text-white text-xl" />
                 </div>
                 <h3 className="text-lg font-semibold mb-1">Email</h3>
                 <p className="text-sm">xyz@gmail.com</p>
               </div>
               
               <div className="p-4 md:p-6 rounded-lg shadow-md text-center bg-black/70 backdrop-blur-sm border border-[#eeba30]/30">
-                <div className="bg-green-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
-                  <FaPhone className="text-green-600 text-xl" />
+                <div className="bg-[#eeba30] w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
+                  <FaPhone className="text-white text-xl" />
                 </div>
                 <h3 className="text-lg font-semibold mb-1">Phone</h3>
                 <p className="text-sm">+91 8958149867 <br /> +91 9324264950 </p>
               </div>
               
               <div className="p-4 md:p-6 rounded-lg shadow-md text-center bg-black/70 backdrop-blur-sm border border-[#eeba30]/30">
-                <div className="bg-purple-100 w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
-                  <FaMapMarkerAlt className="text-purple-600 text-xl" />
+                <div className="bg-[#eeba30] w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3">
+                  <FaMapMarkerAlt className="text-white text-xl" />
                 </div>
                 <h3 className="text-lg font-semibold mb-1">Location</h3>
                 <p className="text-sm">ACEIT, Kukas Jaipur, Rajasthan</p>
