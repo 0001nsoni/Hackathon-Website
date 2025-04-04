@@ -83,7 +83,7 @@ const Faq = () => {
               animate={{ height: activeIndex === index ? 'auto' : 0 }}
               transition={{ duration: 0.3 }}
             >
-              <p className="pt-4 text-gray-300 font-serif">{faq.answer}</p>
+              <p className="pt-4 text-gray-300 ">{faq.answer}</p>
             </motion.div>
           </motion.div>
         ))}
