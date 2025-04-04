@@ -10,12 +10,12 @@ function Sponsors() {
       { name: "I.I.C", logo: "src/assets/iic.png" },
       { name: "Arya Hackathon Club", logo: "src/assets/hack.png" },
     ],
-    /*
+    
     sponsoredBy: [
-      { name: "Ollivanders", logo: "/path/to/ollivanders-logo.png" },
-      { name: "Weasleys' Wizard Wheezes", logo: "/path/to/weasleys-logo.png" },
-      { name: "Daily Prophet", logo: "/path/to/prophet-logo.png" }
-    ],
+      { name: "GeeksForGeeks", logo: "src/assets/GFG.png" },
+      { name: "Devfolio", logo: "src/assets/DEV.png" },
+      { name: "Codeup", logo: "src/assets/UP.png" }
+    ],/*
     partners: [
       { name: "Flourish and Blotts", logo: "/path/to/flourish-logo.png" },
       { name: "The Leaky Cauldron", logo: "/path/to/cauldron-logo.png" }
@@ -44,7 +44,7 @@ function Sponsors() {
         </div>
       </div>
 
-      {/*
+      
       Sponsored By Section - Commented out for future use
       <div className='w-full max-w-6xl mb-12'>
         <h2 className='text-xl sm:text-2xl md:text-3xl font-bold text-[#eeba30] mb-6 text-center'>
@@ -61,7 +61,7 @@ function Sponsors() {
           ))}
         </div>
       </div>
-
+{/*
       Partners Section - Commented out for future use
       <div className='w-full max-w-6xl'>
         <h2 className='text-xl sm:text-2xl md:text-3xl font-bold text-[#eeba30] mb-6 text-center'>
