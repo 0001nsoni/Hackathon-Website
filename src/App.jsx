@@ -6,6 +6,7 @@ import About from './Page/About';
 import Track from './Page/Track';
 import Contact from './Page/Contact';
 import './App.css';
+import Faq from './Page/Faq';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Home id="home" />
         <About id="about" />
         <Track id="tracks"/>
+        <Faq id= 'faq'/>
         <Contact id="contact"/>
       </main>
     </div>

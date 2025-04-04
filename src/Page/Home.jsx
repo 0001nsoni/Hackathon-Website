@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useScroll, motion, useTransform } from 'framer-motion';
 import bgImg from '../assets/hogwarts-min.png';
 import Tpng from '../assets/main.png';
-import bgg from '../assets/bgg.gif';
+import bgg from '../assets/bg2.gif';
 import Countdown from 'react-countdown';
 import hogwartsExpress from '../assets/hogwarts-express.gif';
 
@@ -15,7 +15,7 @@ const Home = ({ id }) => {
   
   // Check if all assets are loaded
   useEffect(() => {
-    const images = [bgImg, Tpng, bgg];
+    const images = [bgImg, Tpng, bgg]; // Removed undefined 'paper' variable
     let loadedCount = 0;
     let errored = false;
     
@@ -26,7 +26,6 @@ const Home = ({ id }) => {
         setLoadingProgress(progress);
         
         if (loadedCount === images.length) {
-          // Small delay for smooth transition
           setTimeout(() => setIsLoading(false), 500);
         }
       }
@@ -36,7 +35,6 @@ const Home = ({ id }) => {
       console.error(`Failed to load image: ${src}`);
       errored = true;
       setErrorLoading(true);
-      // Fallback: continue without waiting for this image
       handleImageLoad();
     };
 
@@ -47,14 +45,13 @@ const Home = ({ id }) => {
       img.onerror = () => handleImageError(src);
     });
 
-    // Fallback timeout in case images take too long
     const timeout = setTimeout(() => {
       if (isLoading) {
         console.warn('Loading timeout reached, continuing anyway');
         setErrorLoading(true);
         setIsLoading(false);
       }
-    }, 10000); // 10 second timeout
+    }, 10000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -102,7 +99,7 @@ const Home = ({ id }) => {
           className="w-64 h-64 object-contain"
           onError={(e) => {
             e.target.onerror = null;
-            e.target.src = ''; // Fallback to nothing if the loading GIF fails
+            e.target.src = '';
           }}
         />
         <div className="mt-8 text-center w-64 sm:w-80">
@@ -129,17 +126,17 @@ const Home = ({ id }) => {
       ref={containerRef}
       className="relative h-screen w-full overflow-hidden font-rye"
     >
-      {/* Dark stormy background layer - with fallback color */}
+      {/* Dark stormy background layer */}
       <div 
-        className="fixed inset-0 w-full h-full overflow-hidden "
+        className="fixed inset-0 w-full h-full overflow-hidden"
         style={{
-          background: bgg ? `url(${bgg}) center/cover no-repeat` : undefined,
+          background: bgg ? `url(${bgg}) center/cover no-repeat` : '#0a0a0a',
           zIndex: -2,
-          opacity: 0.9,
+          opacity: 1,
         }}
       ></div>
       
-      {/* Floating image layer - only shows if image loaded */}
+      {/* Floating image layer */}
       {Tpng && (
         <motion.div 
           className="fixed inset-0 w-full h-full flex items-start justify-center pt-[25%] md:pt-[3%] z-[-1]"
@@ -159,19 +156,26 @@ const Home = ({ id }) => {
         </motion.div>
       )}
       
-      {/* Hogwarts castle background - with fallback color */}
+      {/* Hogwarts castle background */}
       <motion.div 
-        className="absolute top-0 left-0 w-full h-full "
-        style={{
-          backgroundImage: bgImg ? `url(${bgImg})` : undefined,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          opacity: 0.9,
-          filter: 'brightness(0.8)',
-          y: yBg
-        }}
-      ></motion.div>
+  className="absolute top-0 left-0 w-full h-full"
+  style={{
+    backgroundImage: bgImg ? `url(${bgImg})` : 'linear-gradient(to bottom, #000000, #1a0d00)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    opacity: 0.9,
+    filter: 'brightness(0.8)',
+    y: yBg
+  }}
+>
+  <div
+    className="absolute top-170 inset-0 w-full h-[30%]"
+    style={{
+      background: 'linear-gradient(0deg, rgba(0,0,0,1) 55%, rgba(88,84,205,0) 100%)'
+    }}
+  ></div>
+</motion.div>
       
       {/* Main content */}
       <motion.div 

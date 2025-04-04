@@ -30,17 +30,18 @@ const About = ({ id }) => {
   return (
     <section 
       id={id} 
-      className="relative w-full min-h-screen flex flex-col items-center justify-center py-12 px-4"
-      style={{
-        backgroundImage: `url(${backgroundGif})`,
-        backgroundAttachment: 'fixed',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        // backgroundColor: 'rgba(0,0,0,0.7)', // Add a dark overlay
-        backgroundBlendMode: 'overlay'
-      }}
+      className="relative bg-black w-full min-h-screen flex flex-col items-center justify-center py-12 px-4"
+      // style={{
+      //   backgroundImage: `url(${backgroundGif})`,
+      //   backgroundAttachment: 'fixed',
+      //   backgroundSize: 'cover',
+      //   backgroundPosition: 'center',
+      //   // backgroundColor: 'rgba(0,0,0,0.7)', // Add a dark overlay
+      //   backgroundBlendMode: 'overlay'
+      // }}
     >
       {/* Content */}
+      
       <motion.div 
         className="relative w-full flex flex-col items-center justify-center"
         initial="hidden"

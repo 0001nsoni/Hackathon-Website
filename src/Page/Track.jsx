@@ -81,13 +81,13 @@ const Track = ({ id }) => {
   return (
     <section 
       id={id} 
-      className="relative w-full min-h-screen py-16 px-4 overflow-hidden font-rye"
-      style={{
-        background: `linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.9)), url(${house})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      className="relative w-full min-h-screen bg-black py-16 px-4 overflow-hidden font-rye"
+      // style={{
+      //   background: `linear-gradient(rgba(13, 13, 13, 0.85), rgba(13, 13, 13, 0.9))`,
+      //   backgroundSize: 'cover',
+      //   backgroundPosition: 'center',
+      //   backgroundRepeat: 'no-repeat'
+      // }}
     >
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}

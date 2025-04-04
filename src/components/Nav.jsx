@@ -20,17 +20,23 @@ const Nav = () => {
     { id: 'contact', text: 'Contact' }
   ];
 
+  // Function to handle logo clicks
+  const handleLogoClick = (url) => {
+    window.open(url, '_blank');
+  };
+
   return (
     <nav className="sticky top-0 w-full bg-[#0d0d0d]/90 backdrop-blur-sm z-50 
                    border-b border-[#eeba30]/30 py-4 shadow-lg h-20">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Desktop Navigation (unchanged) */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex mt-1.5 justify-between items-center">
-          <div className="absolute left-6">
+          {/* Left Logo - links to www.aryacollege.in */}
+          <div className="absolute left-6 cursor-pointer" onClick={() => handleLogoClick('https://www.aryacollege.in')}>
             <img 
               src={AryaLogo} 
               alt="Logo" 
-              className="h-16 w-16 rounded-full object-cover border-2 border-[#eeba30]"
+              className="h-16 w-16 rounded-full object-cover border-2 border-[#eeba30] hover:border-white transition-all duration-300"
             />
           </div>
           
@@ -42,16 +48,17 @@ const Nav = () => {
             </div>
           </div>
           
-          <div className="absolute right-6">
+          {/* Right Logo - links to https://www.aryacollege.in/arya-event/arya-hackathon-club*/}
+          <div className="absolute right-6 cursor-pointer" onClick={() => handleLogoClick('https://www.aryacollege.in/arya-event/arya-hackathon-club')}>
             <img 
               src={Club} 
               alt="Logo" 
-              className="h-16 w-16 rounded-full object-cover border-2 border-[#eeba30]"
+              className="h-16 w-16 rounded-full object-cover border-2 border-[#eeba30] hover:border-white transition-all duration-300"
             />
           </div>
         </div>
 
-        {/* Mobile Navigation - Modified layout */}
+        {/* Mobile Navigation */}
         <div className="md:hidden flex justify-between items-center">
           {/* Hamburger Menu (Left) */}
           <button
@@ -84,18 +91,22 @@ const Nav = () => {
             </svg>
           </button>
           
-          {/* Both Logos (Right) */}
+          {/* Both Logos (Right) - with same links as desktop */}
           <div className="flex items-center gap-4">
-            <img 
-              src={AryaLogo} 
-              alt="Logo" 
-              className="h-10 w-10 rounded-full object-cover border-2 border-[#eeba30]"
-            />
-            <img 
-              src={Club} 
-              alt="Logo" 
-              className="h-10 w-10 rounded-full object-cover border-2 border-[#eeba30]"
-            />
+            <div className="cursor-pointer" onClick={() => handleLogoClick('https://www.aryacollege.in')}>
+              <img 
+                src={AryaLogo} 
+                alt="Logo" 
+                className="h-10 w-10 rounded-full object-cover border-2 border-[#eeba30] hover:border-white transition-all duration-300"
+              />
+            </div>
+            <div className="cursor-pointer" onClick={() => handleLogoClick('https://www.aryacollege.in/arya-event/arya-hackathon-club')}>
+              <img 
+                src={Club} 
+                alt="Logo" 
+                className="h-10 w-10 rounded-full object-cover border-2 border-[#eeba30] hover:border-white transition-all duration-300"
+              />
+            </div>
           </div>
 
           {/* Mobile Menu Dropdown */}
