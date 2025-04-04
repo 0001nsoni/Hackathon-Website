@@ -9,7 +9,8 @@ import './App.css';
 import Faq from './Page/Faq';
 import Timeline from './Page/Timeline';
 import Sponsors from './Page/Sponsors';
-
+import GuestSlider from './Page/GuestsSlider';
+import PrizePool from './Page/PrizePool';
 function App() {
   return (
     
@@ -20,7 +21,9 @@ function App() {
         <About id="about" />
         <Timeline id="timeline"/>
         <Track id="tracks"/>
+        <PrizePool />
         <Faq id= 'faq'/>
+        <GuestSlider/>
         <Sponsors/>
         <Contact id="contact"/>
       </main>
