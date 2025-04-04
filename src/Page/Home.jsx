@@ -5,6 +5,7 @@ import Tpng from '../assets/main.png';
 import bgg from '../assets/bg2.gif';
 import Countdown from 'react-countdown';
 import hogwartsExpress from '../assets/hogwarts-express.gif';
+import border from '../assets/border.webp';
 
 const Home = ({ id }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,9 +14,8 @@ const Home = ({ id }) => {
   const targetDate = new Date('April 19, 2025 16:00:00').getTime();
   const containerRef = useRef(null);
   
-  // Check if all assets are loaded
   useEffect(() => {
-    const images = [bgImg, Tpng, bgg]; // Removed undefined 'paper' variable
+    const images = [bgImg, Tpng, bgg, border];
     let loadedCount = 0;
     let errored = false;
     
@@ -156,26 +156,39 @@ const Home = ({ id }) => {
         </motion.div>
       )}
       
-      {/* Hogwarts castle background */}
+      {/* Hogwarts castle background with gradient and border */}
       <motion.div 
-  className="absolute top-0 left-0 w-full h-full"
-  style={{
-    backgroundImage: bgImg ? `url(${bgImg})` : 'linear-gradient(to bottom, #000000, #1a0d00)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    opacity: 0.9,
-    filter: 'brightness(0.8)',
-    y: yBg
-  }}
->
-  <div
-    className="absolute top-170 inset-0 w-full h-[30%]"
-    style={{
-      background: 'linear-gradient(0deg, rgba(0,0,0,1) 55%, rgba(88,84,205,0) 100%)'
-    }}
-  ></div>
-</motion.div>
+        className="absolute top-0 left-0 w-full h-full"
+        style={{
+          backgroundImage: bgImg ? `url(${bgImg})` : 'linear-gradient(to bottom, #000000, #1a0d00)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.9,
+          filter: 'brightness(0.8)',
+          y: yBg
+        }}
+      >
+        {/* Gradient overlay at bottom */}
+        <div
+          className="absolute bottom-0 left-0 w-full h-1/3"
+          style={{
+            background: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0) 100%)'
+          }}
+        ></div>
+        
+        {/* Border image at very bottom */}
+        <div
+          className="absolute bottom-0 left-0 w-full h-[100px] md:h-[150px]"
+          style={{
+            backgroundImage: border ? `url(${border})` : 'none',
+            backgroundSize: '100% auto',
+            backgroundPosition: 'bottom',
+            backgroundRepeat: 'no-repeat',
+            mixBlendMode: 'overlay'
+          }}
+        ></div>
+      </motion.div>
       
       {/* Main content */}
       <motion.div 
