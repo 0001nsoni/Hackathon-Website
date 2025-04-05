@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import logo from '../assets/main.png';
 import { FaLinkedin, FaTelegram, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 import { FaDiscord, FaSquareInstagram } from "react-icons/fa6";
-import frame from "../assets/frame.png";
+import frame from "../assets/frame2.webp";
+import { RiTwitterXFill } from "react-icons/ri";
+
 
 const Contact = () => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -59,14 +61,17 @@ const Contact = () => {
               <a href="#" className="text-3xl md:text-4xl text-[#eeba30] hover:text-white transition-colors">
                 <FaLinkedin />
               </a>
-              <a href="#" className="text-3xl md:text-4xl text-[#eeba30] hover:text-white transition-colors">
+              <a href="https://discord.gg/J6e8ZRpb" className="text-3xl md:text-4xl text-[#eeba30] hover:text-white transition-colors">
                 <FaDiscord />
               </a>
-              <a href="#" className="text-3xl md:text-4xl text-[#eeba30] hover:text-white transition-colors">
-                <FaTelegram />
+              <a href="https://x.com/hackaryaverse?s=11" className="text-3xl md:text-4xl text-[#eeba30] hover:text-white transition-colors">
+              <RiTwitterXFill />
               </a>
-              <a href="#" className="text-3xl md:text-4xl text-[#eeba30] hover:text-white transition-colors">
+              <a href="https://www.instagram.com/hackaryaverse?igsh=Ync2YWM2MDV0anV5" className="text-3xl md:text-4xl text-[#eeba30] hover:text-white transition-colors">
                 <FaSquareInstagram />
+              </a>
+              <a href="https://t.me/hackaryaverse" className="text-3xl md:text-4xl text-[#eeba30] hover:text-white transition-colors">
+                <FaTelegram />
               </a>
             </div>
           </div>
@@ -82,7 +87,7 @@ const Contact = () => {
                   <FaEnvelope className="text-white text-xl" />
                 </div>
                 <h3 className="text-lg font-semibold mb-1">Email</h3>
-                <p className="text-sm">xyz@gmail.com</p>
+                <p className="text-sm">tpo@aryacollege.in <br/> aryastudentclubs@aryacollege.in</p>
               </div>
               
               <div className="p-4 md:p-6 rounded-lg shadow-md text-center bg-black/70 backdrop-blur-sm border border-[#eeba30]/30">
@@ -109,24 +114,24 @@ const Contact = () => {
           <div className="h-full flex flex-col justify-center">
             <h2 className="text-2xl md:text-3xl font-bold mt-7 text-center mb-3 md:mb-3 px-4">Find Us</h2>
             <div className="flex-1 flex justify-center items-center px-4">
-              <div className="relative w-full max-w-lg h-[350px] md:h-[400px]">
+              <div className="relative w-full p-10 max-w-lg h-[350px] md:h-[400px]">
                 <iframe
                   title="College Location Map"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3554.0091768445336!2d75.89098077479052!3d27.029875955046872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396daf9e6f4d2f3b%3A0x5b28af6fe5c60627!2sArya%20College%20of%20Engineering%20%26%20IT!5e0!3m2!1sen!2sin!4v1743687727628!5m2!1sen!2sin"
-                  width="98%"
-                  height="98%"
+                  width="90%"
+                  height="90%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0 rounded-lg p-0.5 z-0"
+                  className="absolute top-5 left-5 inset-0 rounded-lg p-0.5 z-0"
                 />
                 
                 <div 
                   className="absolute inset-0 z-10 pointer-events-none"
                   style={{ 
                     backgroundImage: `url(${frame})`,
-                    backgroundSize: '105% 105%',
+                    backgroundSize: '110% 110%',
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center'
                   }}

@@ -102,7 +102,7 @@ const GuestsSlider = () => {
 
         {guests.length === 0 ? (
           <div className="text-center text-gray-300">
-            <p>No guests available at the moment. Please check back later!</p>
+            <p>A mysterious hush fills the air... Something magical is about to unfold. Check back soon to witness the wonder!</p>
           </div>
         ) : (
           <div

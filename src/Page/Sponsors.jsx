@@ -4,12 +4,17 @@ import Card from '../components/Card';
 import AryaLogo from '../assets/Arya.jpg';
 import AICLogo from '../assets/AIC.png';
 import IICLogo from '../assets/iic.png';
-import HackLogo from '../assets/hack.png';
+import HackLogo from '../assets/hack.jpg';
 import GFGLogo from '../assets/GFG.png';
 import DevLogo from '../assets/DEV.png';
 import CodeUpLogo from '../assets/UP.png';
 import WeAdLogo from '../assets/wem.jpg';
 import AryaPhotoLogo from '../assets/photographyclub.jpg';
+
+import lincom from '../assets/lincom.jpg'
+import cipher from '../assets/cipher.jpg'
+import movie from '../assets/movie.jpg'
+
 
 function Sponsors() {
   // Sample sponsor data with imported images
@@ -18,7 +23,12 @@ function Sponsors() {
       { name: "Arya College of Engineering & IT Jaipur", logo: AryaLogo },
       { name: "Arya Incubation Center", logo: AICLogo },
       { name: "I.I.C", logo: IICLogo },
+      { name: "Arya Cipher Club ", logo: cipher },
       { name: "Arya Hackathon Club", logo: HackLogo },
+      { name: "Arya Lincom Club ", logo:lincom },
+      
+
+
     ],
     sponsoredBy: [
       { name: "GeeksForGeeks", logo: GFGLogo },
@@ -28,7 +38,7 @@ function Sponsors() {
     mediaPartners: [
       { name: "We Ad Media", logo:WeAdLogo  },
       { name: "Arya Photography club",logo: AryaPhotoLogo }, 
-      { name: "Arya Movie club",   }
+      { name: "Arya Movie club", logo: movie   }
     ] 
     /*
     partners: [
@@ -39,7 +49,7 @@ function Sponsors() {
   };
 
   // Replace with your actual Google Drive PDF link
-  const sponsorshipBrochureLink = "https://drive.google.com/file/d/176Y_Pc-1-nN9qbbUxchI8vgQSJcpLq_K/view?usp=sharing";
+  const sponsorshipBrochureLink = "https://drive.google.com/file/d/1kPBFUGlAu-HGUTUK2RArn6yLtoXoYESL/view?usp=sharing";
 
   const openSponsorshipPDF = () => {
     window.open(sponsorshipBrochureLink, "_blank");
