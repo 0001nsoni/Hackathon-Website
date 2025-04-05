@@ -39,7 +39,7 @@ function Sponsors() {
   };
 
   // Replace with your actual Google Drive PDF link
-  const sponsorshipBrochureLink = "https://drive.google.com/file/d/YOUR_FILE_ID/view";
+  const sponsorshipBrochureLink = "https://drive.google.com/file/d/176Y_Pc-1-nN9qbbUxchI8vgQSJcpLq_K/view?usp=sharing";
 
   const openSponsorshipPDF = () => {
     window.open(sponsorshipBrochureLink, "_blank");
