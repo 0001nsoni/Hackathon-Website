@@ -142,7 +142,7 @@ const Track = ({ id }) => {
 
         {/* Open Innovation Track */}
         <motion.div
-          className="text-center mt-12 p-4 rounded-tl-3xl rounded-br-3xl bg-black/50 rounded-lg border border-2 border-[#eeba30]/30"
+          className="text-center mt-12 p-4 rounded-tl-3xl rounded-br-3xl bg-black/50 rounded-lg  border-4 border-[#eeba30]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}

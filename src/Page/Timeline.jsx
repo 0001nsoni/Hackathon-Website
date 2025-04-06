@@ -12,7 +12,7 @@ const Timeline = () => {
           <img 
             src={imgT} 
             alt="Hogwarts Events Timeline" 
-            className="w-full h-auto rounded-lg shadow-lg border-2 border-[#eeba30]"
+            className="w-full opacity-80 p-3  bg-[#1a0d00]/90 h-auto rounded-br-4xl rounded-tl-4xl shadow-lg border-4 border-[#eeba30]"
           />
         </div>
       </div>
