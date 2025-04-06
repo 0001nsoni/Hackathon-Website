@@ -145,7 +145,7 @@ const Home = ({ id }) => {
           <img 
             src={Tpng} 
             alt="Harry Potter themed content" 
-            className="max-w-[60%] sm:max-w-[70%] md:max-w-[30%] ml-5"
+            className="max-w-[70%] sm:max-w-[80%] md:max-w-[20%] ml-8 mt-3"
             style={{ 
               animation: 'float 3s ease-in-out infinite',
             }}
@@ -222,6 +222,7 @@ const Home = ({ id }) => {
               <button 
                 className="bg-[#1a0d00] hover:bg-[#2a1800] text-[#eeba30] font-bold py-2 sm:py-3 px-3 sm:px-6 rounded-tl-2xl rounded-br-2xl
                           border-2 border-[#eeba30] transition-all duration-300 text-sm sm:text-lg flex-1 hover:shadow-[#eeba30]/30 font-rye"
+                          onClick={() => window.open('https://linktr.ee/hackarya', '_blank')}
               >
                 Join Community
               </button>
